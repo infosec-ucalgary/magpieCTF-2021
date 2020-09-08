@@ -1,0 +1,54 @@
+/* Layout */
+
+body {
+  min-width: 630px;
+  font-family: Sans-serif;
+  background-color: rgb(184, 8, 8);
+  color: rgb(224, 224, 3);
+}
+
+#container {
+  padding-left: 30%;
+  padding-right: 30%;
+  overflow: hidden;
+}
+
+#container .column {
+  position: relative;
+  float: left;
+  padding-bottom: 1001em;
+  margin-bottom: -1000em;
+}
+
+#center {
+  padding: 10px 20px;
+
+  width: 100%;
+}
+
+#table {
+  color: wheat;
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+
+hr {
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+/* IE hack */
+* html #left {
+  left: 150px;
+}
+
+.box {
+  padding: 10px;
+  border: 5px solid gray;
+  margin: 20px; 
+}
