@@ -4,19 +4,17 @@
 #include "room.h" 
 
 struct room {
-    /* data */
     char *name;
     char *description;
     struct room *northLink;
     struct room *southLink;
     struct room *westLink;
     struct room *eastLink;
-
 };
 
 // initializes a room and returns a pointer to the room 
 struct room * initializeRoom(char *roomName, char *description) {
-    struct room *r;
+    struct room *r = malloc(sizeof(struct room));
     r->name = roomName;
     r->description = description;
 
@@ -27,7 +25,7 @@ struct room * initializeRoom(char *roomName, char *description) {
 // returns a pointer to an array of room pointers
 struct room ** initializeMap() {
     // create all game rooms 
-    struct room ** map = (struct room **) malloc(sizeof(struct room *) * 5);
+    struct room ** map = (struct room **) malloc(5 * sizeof(struct room *));
 
     map[0] = initializeRoom("entrance", "You're in a room, but you don't know how you got here\n");
     map[1] = initializeRoom("main", "You are in a large space with doors to the N, S, E, and W\n");
