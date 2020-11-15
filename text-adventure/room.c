@@ -53,26 +53,38 @@ struct room ** initializeMap() {
 
 void executeGo(const char *noun, struct room *currRoom) {
     if (noun != NULL && strcmp(noun, "north") == 0) {
-        if (currRoom->northLink != NULL){
-            currRoom = currRoom->northLink;
+        if (currRoom->northLink == NULL){
+            printf("You can't go that way in here.\n");
+        } 
+        else {
+            *currRoom = *currRoom->northLink;
             printf("%s\n", currRoom->description);
         }
     }
     else if (noun != NULL && strcmp(noun, "south") == 0) {
-        if (currRoom->southLink != NULL){
-            currRoom = currRoom->southLink;
+        if (currRoom->southLink == NULL){
+            printf("You can't go that way in here.\n");
+        }
+        else {
+            *currRoom = *currRoom->southLink;
             printf("%s\n", currRoom->description);
         }
     }
     else if (noun != NULL && strcmp(noun, "east") == 0) {
-        if (currRoom->eastLink != NULL){
-            currRoom = currRoom->eastLink;
+        if (currRoom->eastLink == NULL){
+            printf("You can't go that way in here.\n");
+        }
+        else {
+            *currRoom = *currRoom->eastLink;
             printf("%s\n", currRoom->description);
         }
     }
     else if (noun != NULL && strcmp(noun, "west") == 0) {
-        if (currRoom->westLink != NULL){
-            currRoom = currRoom->westLink;
+        if (currRoom->westLink == NULL){
+            printf("You can't go that way in here.\n");
+        }
+        else {
+            *currRoom = *currRoom->westLink;
             printf("%s\n", currRoom->description);
         }
     }
