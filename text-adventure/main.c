@@ -13,7 +13,7 @@ static bool getInput(void) {
 
 int main(){
     system("clear");
-    printf("Welcome to Magpie Adventure.\n");
+    printf("Welcome to Magpie Adventure. Type 'help' for a list of commands.\n");
     struct room **map = initializeMap();
     struct room *currRoom = map[0];         // player always starts at map position 0
 

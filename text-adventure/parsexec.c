@@ -13,7 +13,20 @@ bool parseAndExecute(char *input, struct room *currRoom) {
             return false;
         }
         else if (strcmp(verb, "clear") == 0) {
+            executeLook("around", currRoom);
             system("clear");
+        }
+        else if (strcmp(verb, "help") == 0) {
+            printf("Usage: [verb] [noun]\n"
+                "Some helpful commands (there may be more!)\n"
+                "\thelp: print this help dialogue\n"
+                "\tlook: inspect a room or an item\n"
+                "\tgo: move in a given direction\n"
+                "\tclear: clear the screen\n"
+                "\tquit: leave the game\n"
+                "Some examples:\n"
+                "\t-->look around: provide a description of your current room\n"
+                "\t-->go north: move to the room north of your current room\n");
         }
         else if (strcmp(verb, "look") == 0) {
             executeLook(noun, currRoom);
