@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdbool.h>
 #include <string.h>
+#include <stdlib.h>
 #include "room.h"
 
 bool parseAndExecute(char *input, struct room *currRoom) {
@@ -10,6 +11,9 @@ bool parseAndExecute(char *input, struct room *currRoom) {
     if (verb != NULL) {
         if (strcmp(verb, "quit") == 0) {
             return false;
+        }
+        else if (strcmp(verb, "clear") == 0) {
+            system("clear");
         }
         else if (strcmp(verb, "look") == 0) {
             executeLook(noun, currRoom);

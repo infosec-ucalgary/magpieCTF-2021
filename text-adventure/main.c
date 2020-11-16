@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdbool.h>
+#include <stdlib.h>
 #include "parsexec.h"
 #include "room.h"
 
@@ -11,6 +12,7 @@ static bool getInput(void) {
 }
 
 int main(){
+    system("clear");
     printf("Welcome to Magpie Adventure.\n");
     struct room **map = initializeMap();
     struct room *currRoom = map[0];         // player always starts at map position 0
