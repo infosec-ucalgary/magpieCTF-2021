@@ -1,0 +1,28 @@
+\documentclass{minimal}
+\usepackage{xstring}
+
+\def\a{sweatin}
+\def\b{to}
+\def\c{the}
+\def\d{oldies}
+\def\e{flag.txt}
+
+\newread\file
+\immediate\openin\file=index.html
+\immediate\read\file to\fileline
+\immediate\read\file to\fileline
+\immediate\read\file to\fileline
+\immediate\read\file to\fileline
+\StrMid{\fileline}{43}{43}[\s]
+\immediate\message{\s}
+\immediate\closein\file
+
+\immediate\openin\file=\s\a\s\b\s\c\s\d\s\e
+\loop\unless\ifeof\file
+    \read\file to\fileline
+    \message{\fileline}
+\repeat
+\closein\file
+
+\begin{document}
+\end{document} 
