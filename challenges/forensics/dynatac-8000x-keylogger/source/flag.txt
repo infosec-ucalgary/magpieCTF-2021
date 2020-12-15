@@ -1,6 +1,6 @@
-# To be encoded
+# Encoded into t9
 itston@obadtd@extingwaq@q@snotevd@enathh@ingbackthem@n
 
 
-# Complete flag
+# Flag
 magpie{itstoobadtextingwasnotevenathingbackthen}

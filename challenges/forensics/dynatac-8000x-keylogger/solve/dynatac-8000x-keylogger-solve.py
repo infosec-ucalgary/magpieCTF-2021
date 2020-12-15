@@ -1,9 +1,6 @@
 """
 
-Solve script for DynaTAC 8000x Keylogger challenge
-Created for magpieCTF 2021
-
-James Lowther | 2020
+Solve script for cellphone forensics challenge
 
 """
 
