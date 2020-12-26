@@ -48,4 +48,4 @@ def proxy_thread(my_port, challenge_host, challenge_port):
 
     return data.decode()
 
-print(solve())
+solve()
