@@ -1,0 +1,36 @@
+on:
+  push:
+    branches: master
+
+name: Build Flag Checker
+
+jobs:
+  build:
+    name: build-flag-checker
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout branch
+      uses: actions/checkout@v2
+    
+    - name: Install dependencies
+      run: |
+        sudo apt-get install -y gcc libssl-dev
+
+    - name: Set hash 
+      id: get_hash
+      run: |
+        chmod +x flaghash.sh
+        echo "::set-output name=HASH_VALUE::$( ./flaghash.sh )"
+
+    - name: Build flag checker program  
+      run: |
+        chmod +x build.sh
+        ./build.sh ${{ steps.get_hash.outputs.HASH_VALUE }}
+      
+    - name: Upload build artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: flagchecker
+        path: ../../bin/flagchecker
+
