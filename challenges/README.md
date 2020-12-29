@@ -13,7 +13,7 @@ There should also be a folder called `source/` which contains any source code/sc
 
 There should also be a folder called `solve/` which contains the solve script for the challenge. If your challenge is static and does not need a solve script then this folder may be omitted.
 
-If your challenge is static, then place the static challenge file in the challenge root directory alongside the `README.md` file.
+If your challenge is static, then place the static challenge file in the challenge's root directory alongside the `README.md` file.
 
 ***
 ### Example Folder Structure
