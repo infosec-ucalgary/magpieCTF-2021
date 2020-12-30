@@ -75,7 +75,7 @@ struct room ** initializeMap() {
     map[4]->westLink = map[1];
 
     // add items to rooms 
-    map[2]->items[0] = initializeItem("terminal", "One computer in the back corner appears to still be functioning. It glows green and a single cursor blinks.", "./hello", 1);
+    map[2]->items[0] = initializeItem("terminal", "One computer in the back corner appears to still be functioning. It glows green and a single cursor blinks.", "./terminal-login", 1);
     map[2]->items[1] = initializeItem("junk", "Heaped around the room are piles of broken circuitry and smashed hardware. None of it seems useable.", "Nothing happens", 0);
 
     map[3]->items[0] = initializeItem("safe", "The grey metal safe takes up the whole wall. On the front is a large black wheel and a complicated pinpad.", "Nothing happens", 0);
