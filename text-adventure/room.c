@@ -17,16 +17,20 @@ struct room {
 struct item {
     char *name;
     char *description;
+    char *effect;
+    int executable;
 };
 
 // Function header
 int roomHasItem(const char *, struct room *);
 
 // initializes an item and returns a pointer to the item 
-struct item *initializeItem(char *itemName, char *description) {
+struct item *initializeItem(char *itemName, char *description, char *effect, int executable) {
     struct item *it = malloc(sizeof(struct item));
     it->name = itemName;
     it->description = description;
+    it->effect = effect;
+    it->executable = executable;
 
     return it;
 }
@@ -38,7 +42,7 @@ struct room * initializeRoom(char *roomName, char *description) {
     r->description = description;
 
     for (int i=0; i<5; i++) {
-        r->items[i] = initializeItem("", "There doesn't seem to be anything here");
+        r->items[i] = initializeItem("", "There doesn't seem to be anything here", "Nothing happens", 0);
     }
 
     return r;
@@ -71,11 +75,11 @@ struct room ** initializeMap() {
     map[4]->westLink = map[1];
 
     // add items to rooms 
-    map[2]->items[0] = initializeItem("terminal", "One computer in the back corner appears to still be functioning. It glows green and a single cursor blinks.");
-    map[2]->items[1] = initializeItem("junk", "Heaped around the room are piles of broken circuitry and smashed hardware. None of it seems useable.");
+    map[2]->items[0] = initializeItem("terminal", "One computer in the back corner appears to still be functioning. It glows green and a single cursor blinks.", "./hello", 1);
+    map[2]->items[1] = initializeItem("junk", "Heaped around the room are piles of broken circuitry and smashed hardware. None of it seems useable.", "Nothing happens", 0);
 
-    map[3]->items[0] = initializeItem("safe", "The grey metal safe takes up the whole wall. On the front is a large black wheel and a complicated pinpad.");
-    map[3]->items[1] = initializeItem("pinpad", "The pinpad consists of nine worn buttons and a faded day-glo screen.");
+    map[3]->items[0] = initializeItem("safe", "The grey metal safe takes up the whole wall. On the front is a large black wheel and a complicated pinpad.", "Nothing happens", 0);
+    map[3]->items[1] = initializeItem("pinpad", "The pinpad consists of nine worn buttons and a faded day-glo screen.", "Nothing happens", 0);
 
     // return array of rooms 
     return map;
@@ -142,9 +146,19 @@ void executeLook(const char *noun, struct room *currRoom) {
 }
 
 void executeUse(const char * noun, struct room * currRoom) {
-	if (roomHasItem(noun, currRoom) == 1) {
-		printf("You use the %s.", noun);
-	} else {
+    int position = roomHasItem(noun, currRoom);
+	if (position != -1) {
+        if (currRoom->items[position]->executable == 1){
+            // This means the item represents an external child process that
+            // we should spin off the main program
+            system(currRoom->items[position]->effect);
+        }
+        else {
+            // This means the item does not need to spin off a child process
+            printf("%s", currRoom->items[position]->effect);
+        }
+	} 
+    else {
 		printf("There is no %s in this room.", noun);
 	}
 }
@@ -156,15 +170,14 @@ void executeUse(const char * noun, struct room * currRoom) {
 // Loop through non-null indices of the items and return
 // if the item name matches the given noun
 int roomHasItem(const char * name, struct room * rm) {
-    int exists = 0;
 	for (int i = 0; i < 5; i++) {
-		if (!rm->items[i]) break;
+		if (!rm->items[i]) 
+            return -1;
 		else {
 			if (strcmp(rm->items[i]->name, name) == 0) {
-				exists = 1;
-				break;
+				return i;
 			}
 		}
 	}
-	return exists;
+	return -1;
 }

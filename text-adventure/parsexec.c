@@ -22,6 +22,7 @@ bool parseAndExecute(char *input, struct room *currRoom) {
                 "\thelp: print this help dialogue\n"
                 "\tlook: inspect a room or an item\n"
                 "\tgo: move in a given direction\n"
+                "\tuse: use an object\n"
                 "\tclear: clear the screen\n"
                 "\tquit: leave the game\n"
                 "Some examples:\n"
