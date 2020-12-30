@@ -19,6 +19,9 @@ struct item {
     char *description;
 };
 
+// Function header
+int roomHasItem(const char *, struct room *);
+
 // initializes an item and returns a pointer to the item 
 struct item *initializeItem(char *itemName, char *description) {
     struct item *it = malloc(sizeof(struct item));
@@ -136,4 +139,32 @@ void executeLook(const char *noun, struct room *currRoom) {
    else {
       printf("I don't understand what you want to see.");
    }
+}
+
+void executeUse(const char * noun, struct room * currRoom) {
+	if (roomHasItem(noun, currRoom) == 1) {
+		printf("You use the %s.", noun);
+	} else {
+		printf("There is no %s in this room.", noun);
+	}
+}
+
+/*
+ * Item helper functions
+ */
+
+// Loop through non-null indices of the items and return
+// if the item name matches the given noun
+int roomHasItem(const char * name, struct room * rm) {
+    int exists = 0;
+	for (int i = 0; i < 5; i++) {
+		if (!rm->items[i]) break;
+		else {
+			if (strcmp(rm->items[i]->name, name) == 0) {
+				exists = 1;
+				break;
+			}
+		}
+	}
+	return exists;
 }

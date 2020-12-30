@@ -34,6 +34,9 @@ bool parseAndExecute(char *input, struct room *currRoom) {
         else if (strcmp(verb, "go") == 0) {
             executeGo(noun, currRoom);
         }
+		else if (strcmp(verb, "use") == 0) {
+			executeUse(noun, currRoom);
+		}
         else {
             printf("I don't know how to '%s'.\n", verb);
         }
