@@ -55,8 +55,9 @@ Below is an example template for how to format the `README.md` file for your cha
 ## Description
 This is the challenge description!
 
-Hint 1: Here is hint 1!
-Hint 2: Here is hint 2!
+## Hints
+1. Here is hint 1!
+2. Here is hint 2!
 
 ## Solution
 This would be the solution to the challenge!
