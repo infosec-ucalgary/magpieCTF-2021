@@ -6,7 +6,7 @@ import random
 
 def main():
     dump = "./bin/"
-    file_count = 2 # higher numbers take a lot of storage
+    file_count = 50 # higher numbers take a lot of storage
     file_size = 110000000
     flag = b"magpie{g00gl3_dr1v3_|)1v3}"
 
