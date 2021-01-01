@@ -6,7 +6,9 @@ import random
 
 def main():
     dump = "./bin/"
-    file_count = 50 # this will take up (file_count / 10) GB of storage
+    file_count = 2 # higher numbers take a lot of storage
+    file_size = 110000000
+    flag = b"magpie{g00gl3_dr1v3_|)1v3}"
 
     try:
         os.mkdir(dump)
@@ -20,12 +22,12 @@ def main():
 
     for i in range(1, file_count):
         binname = f"{hex(random.randint(i* 10000000000, i * 10000000000))[2::]}.bin"
-        rand_dump = b"\x00" + os.urandom(100000000) + b"\x00"
+        rand_dump = b"\x00" + os.urandom(file_size) + b"\x00"
 
         with open(dump+binname, 'wb') as bfile: bfile.write(rand_dump)
         print(f"{dump+binname} has been written")
     
-    flag_dump = b"\x00" + os.urandom(99999974) + b"magpie{g00gl3_dr1v3_|)1v3}" + b"\x00"
+    flag_dump = b"\x00" + os.urandom(file_size - len(flag)) + flag + b"\x00"
     with open("bin/25a01c500.bin", 'wb') as lastfile: lastfile.write(flag_dump)
     print(f"bin/25a01c500.bin with the flag has been written")
 
