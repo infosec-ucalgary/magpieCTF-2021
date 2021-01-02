@@ -47,7 +47,7 @@ challenges
 ### Example README File
 Below is an example template for how to format the `README.md` file for your challenge:
 
-```
+```markdown
 # Foo Bar
 ### Category: Forensics
 ### Author: John Smith (jsmith123)
