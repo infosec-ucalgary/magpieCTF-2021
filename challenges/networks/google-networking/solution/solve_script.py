@@ -17,30 +17,27 @@ def get_ids():
     return ids
 
 def main():
-    session = requests.Session()
     ids = get_ids()
 
+    prev_key = ""
     for id_str in ids:
         dl_link = f"https://drive.google.com/u/0/uc?id={id_str}&export=download" 
         confirm_key = ""
-        prev_key = ""
 
         print(dl_link)
+
         # Essential code is below
+        session = requests.Session()
         resp = session.get(dl_link)
+        for key, value in session.cookies.get_dict().items():
+            if "download" not in key: continue
+            confirm_key = value
+            break
 
-        while(True):
-            for key, value in session.cookies.get_dict().items():
-                if "download" not in key: continue
-                confirm_key = value
-                break
-
-                if not confirm_key: 
-                    print("Confirmation key not found :(")
-                    break
-
-            if prev_key != confirm_key: break
-        resp.close()
+        if not confirm_key: 
+            print("Confirmation key not found :(")
+            return
+ 
 
         prev_key = confirm_key
         print(confirm_key)
@@ -50,11 +47,13 @@ def main():
         resp = session.get(confirm_link)
         print(f"downloading {confirm_link} to temp.bin")
         with open("./temp.bin", "wb+") as dump: dump.write(resp.content)
-        resp.close()
+        session.close()
 
         print(f"content from {confirm_link} has been written to temp")
         grep = subp.Popen(f"strings temp.bin | grep magpie >> flag.txt", shell=True)
+        with open("./flag.txt", "r") as flag: flag.read()
 
+        print("")
     return
 
 if __name__ == "__main__": main()
