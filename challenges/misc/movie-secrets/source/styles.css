@@ -12,8 +12,12 @@ body *{
     margin: 0;
 }
 
-p, h1, h2, h3, i, b{
+p, h1, h2, h3, i, b, a{
     color: var(--font-color);
+}
+
+html{
+    scroll-behavior: smooth;
 }
 
 body{
@@ -41,4 +45,17 @@ body{
 .movie-list img{
     height: auto;
     max-width: 12rem;
+}
+
+#main h3{
+    margin: 1rem 0;
+}
+
+p a{
+    display: inline;
+    text-decoration: underline;
+}
+
+#main #about{
+    margin: 0 3rem;
 }
