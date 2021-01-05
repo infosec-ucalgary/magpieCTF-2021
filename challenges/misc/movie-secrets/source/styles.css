@@ -1,0 +1,44 @@
+:root{
+    font-size: 20px;
+    font-family: "Helvetica", sans-serif;
+    
+    --background: #222222;
+    --font-color: #f3f3f3;
+}
+
+body *{
+    display: block;
+    padding: 0;
+    margin: 0;
+}
+
+p, h1, h2, h3, i, b{
+    color: var(--font-color);
+}
+
+body{
+    background-color: var(--background);
+}
+
+#header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#main{
+    margin: 2rem 1rem;
+}
+
+.movie-list{
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-gap: 1rem;
+    max-width: 100vw;
+    overflow: scroll;
+}
+
+.movie-list img{
+    height: auto;
+    max-width: 12rem;
+}
