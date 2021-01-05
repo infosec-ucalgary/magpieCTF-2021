@@ -12,7 +12,7 @@ body *{
     margin: 0;
 }
 
-p, h1, h2, h3, i, b, a, li{
+p, h1, h2, h3, i, b, a, li, u{
     color: var(--font-color);
 }
 
@@ -68,4 +68,9 @@ p i{
 #main p{
     line-height: 1.1rem;
     margin-bottom: 1.2rem;
+}
+
+li{
+    display: list-item;
+    margin-left: 3rem;
 }
