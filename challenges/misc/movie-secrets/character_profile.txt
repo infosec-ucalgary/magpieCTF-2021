@@ -5,7 +5,7 @@ Pets name: timbala
 favourite movie: goonies
 favourite food: lasagna
 
-full password: timbalagoonieslasagna88per22Dm
+full password: timbalagoonieslasagna88per22hm
 
 string conversion (javascript):
 for(chr in passwrd){console.log(passwrd.charCodeAt(chr).toString(16))}
