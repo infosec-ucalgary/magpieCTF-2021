@@ -10,6 +10,9 @@ full password: timbalagoonieslasagna88per22hm
 string conversion (javascript):
 for(chr in passwrd){console.log(passwrd.charCodeAt(chr).toString(16))}
 
+window manipulation (javscript):
+window.location = new URL(window.location.orgin + newPath)
+
 Flag hidden at
 74696d62616c61676f6f6e6965736c617361676e6138387065723136686d.html
 
