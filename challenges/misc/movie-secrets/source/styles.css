@@ -4,6 +4,8 @@
     
     --background: #222222;
     --font-color: #f3f3f3;
+    --footer-background: #181818;
+    --hidden-link: #242424;
 }
 
 body *{
@@ -22,12 +24,14 @@ html{
 
 body{
     background-color: var(--background);
+    margin: 0;
 }
 
 #header{
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 2rem;
 }
 
 #main{
@@ -73,4 +77,20 @@ p i{
 li{
     display: list-item;
     margin-left: 3rem;
+}
+
+#footer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    width: 100vw;
+
+    background-color: var(--footer-background);
+}
+
+#footer a{
+    color: var(--hidden-link);
 }
