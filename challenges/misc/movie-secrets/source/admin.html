@@ -1,6 +1,27 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <title>Admin Login Page</title>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="styles.css" />
+        <script>
+            function loaded(){
+                let form = document.querySelector("form");
+                form.addEventListener("submit", function(event){
+                    event.preventDefault();
+                    let passwrd = form.pw.value;
+                    let newPath = "";
+
+                    for(chr in passwrd){
+                        newPath += passwrd.charCodeAt(chr).toString(16);
+                    }
+                    
+                    window.location.replace(`${newPath}.html`)
+                });
+            }
+
+            window.onload = () => loaded();
+        </script>
     </head>
     <body>
         <div id="header">
