@@ -14,7 +14,7 @@ window manipulation (javscript):
 window.location = new URL(window.location.orgin + newPath)
 
 Flag hidden at
-74696d62616c61676f6f6e6965736c617361676e6138387065723136686d.html
+74696d62616c61676f6f6e6965736c617361676e6138387065723232686d.html
 
 Flag:
 magpie{j0urn3y_t0_743_c3ntr3_of_743_n3t}
