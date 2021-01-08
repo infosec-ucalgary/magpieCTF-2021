@@ -17,7 +17,7 @@ jobs:
       run: |
         sudo apt-get install -y gcc libssl-dev
 
-    - name: Set hash 
+    - name: Get hash 
       id: get_hash
       run: |
         chmod +x flaghash.sh

@@ -5,7 +5,9 @@
 ## Description
 And no message could have been any clearer...
 
-Hint 1: Where is the data getting filtered?
+
+## Hints
+1. Where is the data getting filtered?
 
 ## Solution
 This challenge provides a website and a proxy. Going to the website without going through the proxy will return an error stating that you can't get the flag this way. Connecting to the website through the proxy will indicate that the flag was returned, but was filtered out by the proxy before getting sent to you.

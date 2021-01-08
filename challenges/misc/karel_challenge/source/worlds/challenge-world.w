@@ -14,4 +14,4 @@ Beeper: (9, 9) 1
 Beeper: (8, 9) 1
 BeeperBag: 0
 Karel: (5, 2) East
-Speed: 2
+Speed: 6
