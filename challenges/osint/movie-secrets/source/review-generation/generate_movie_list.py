@@ -4,9 +4,12 @@ import random
 
 def create_format(movie_name, meta_rank):
     rank = int(meta_rank % 10 + random.randint(1, 10))
-    while(rank > 10): rank -= random.randint(-1, 6)
+    if meta_rank > 10:  rank += random.randint(0, 3)
+    if meta_rank < 80 or not random.randint(0, 100): rank -= random.randint(0, 4)
+    while(rank > 10): rank -= random.randint(-1, 4)
+  
     if movie_name == "The Goonies": rank = 10
-    return f"<tr><td>{movie_name}</td><td>{rank}/10</td></tr>\n"
+    return f"<tr><td><a href=\"missing-review.html\">{movie_name}</a></td><td>{rank}/10</td></tr>\n"
 
 def main():
     movies = []
