@@ -3,7 +3,9 @@
 ### Author: Ethan Sengsavang (Petiole)
 
 ## Description
-Rumours have been floating around that 
+Rumours have been floating around that some data from the legendary Polybius
+was leaked and has been circulating the internet for some time. After some
+digging, these Google Drive links seem to have something of interest.
 
 Hint 1:
 
