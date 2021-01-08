@@ -1,5 +1,5 @@
 # Movie Secrets
-### Category: Misc
+### Category: OSINT
 ### Author: Ethan Sengsavang (Petiole)
 
 ## Description
