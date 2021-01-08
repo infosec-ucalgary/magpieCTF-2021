@@ -1,6 +1,6 @@
 # Treasures of Polybius
 ### Category: Networking
-### Author: Ethan Sengsavang (Petiole)
+### Author: Ethan Sengsavang (e-seng)
 
 ## Description
 Rumours have been floating around that some data from the legendary Polybius
