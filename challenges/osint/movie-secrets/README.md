@@ -8,9 +8,9 @@ Can you determine the password like the hacker did?
 
 https://fibrousfilms.neocities.net
 
-Hint 1: Connect ideas between websites
-
-Hint 2: Where can you find FibrousFilms' birthday?
+## Hints
+1. Connect ideas between websites
+2. Where can you find FibrousFilms' birthday?
 
 ## Solution
 1. Players must determine that FibrousFilms has a Twitter and a Reddit

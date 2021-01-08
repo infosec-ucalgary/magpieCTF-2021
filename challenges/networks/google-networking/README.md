@@ -63,12 +63,10 @@ https://drive.google.com/file/d/1zyzlH1KXgwt3lFqw0UiUt8RklbmcN30s/view?usp=shari
 https://drive.google.com/file/d/1xvJurxc2nLfFp6TvgmZb1r525R-0TEkk/view?usp=sharing
 https://drive.google.com/file/d/1jDvzBYkgK3WWlXbHEadmGW3yWn4AMRQw/view?usp=sharing
 ```
-
-Hint 1: Which link leads you to the file itself?
-
-Hint 2: How does Google know which file you're trying to download?
-
-Hint 3: Where does the confirmation key come from?
+## Hints
+1. Which link leads you to the file itself?
+2. How does Google know which file you're trying to download?
+3. Where does the confirmation key come from?
 
 ## Solution
 1. Players must first notice that Google Drive uses a specific path to download
