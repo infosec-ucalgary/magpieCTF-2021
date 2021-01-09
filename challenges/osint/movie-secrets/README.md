@@ -6,7 +6,7 @@
 All the reviews from the film reviewer FibrousFilms was recently wiped.
 Can you determine the password like the hacker did?
 
-https://fibrousfilms.neocities.net
+https://fibrousfilms.netlify.app
 
 ## Hints
 1. Connect ideas between websites
