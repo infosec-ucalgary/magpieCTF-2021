@@ -1,7 +1,5 @@
 <?php
 
-# NOTE: this file should be hosted separately and is here for completeness
-
 $headers =  getallheaders();
 
 foreach($headers as $key=>$val){
