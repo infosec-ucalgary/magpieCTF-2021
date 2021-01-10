@@ -55,9 +55,9 @@ struct room ** initializeMap() {
     struct room ** map = (struct room **) malloc(5 * sizeof(struct room *));
 
     map[0] = initializeRoom("entrance", "You're in a room, but you don't know how you got here. To the north is a heavy metal door.");
-    map[1] = initializeRoom("main", "You are in a large space with metal doors to the North, South, and West");
-    map[2] = initializeRoom("lab", "To the east is a heavy metal door. Broken computer equipment is everywhere, but one terminal continues to blink...");
-    map[3] = initializeRoom("locked", "A locked safe sits on the north side of the room. To the south is a heavy metal door.");
+    map[1] = initializeRoom("main", "You are in a large space with metal doors to the North, South, and West. On the wall across from you, there is a notice.");
+    map[2] = initializeRoom("lab", "To the east is a heavy metal door. There is an slightly open drawer nearby and on top of it is a stereo. Broken computer equipment is everywhere, but one terminal continues to blink...");
+    map[3] = initializeRoom("locked", "A locked safe sits on the north side of the room. On the wall is a whip on a plaque. To the south is a heavy metal door.");
     map[4] = initializeRoom("secret", "You're not sure you're supposed to be here...");
 
     // create links between rooms
@@ -75,11 +75,15 @@ struct room ** initializeMap() {
     map[4]->westLink = map[1];
 
     // add items to rooms 
+	map[1]->items[0] = initializeItem("notice", "- Don't leave food on the counters. - Jim, stop playing your video game music so loud and stop leaving video game toys laying around! We get it, you like that game. - No pets allowed on premises.", "Nothing happens", 0);
     map[2]->items[0] = initializeItem("terminal", "One computer in the back corner appears to still be functioning. It glows green and a single cursor blinks.", "./terminal-login", 1);
     map[2]->items[1] = initializeItem("junk", "Heaped around the room are piles of broken circuitry and smashed hardware. None of it seems useable.", "Nothing happens", 0);
+	map[2]->items[2] = initializeItem("drawer", "A slightly open drawer with a broken NES inside.", "Nothing happens", 0);
+	map[2]->items[3] = initializeItem("stereo", "A stereo with a tape inside labelled 'EPIC BOSS FITE MUSIC'. Probably illegally recorded but no judgement from me.", "Nothing happens", 0);
 
     map[3]->items[0] = initializeItem("safe", "The grey metal safe takes up the whole wall. On the front is a large black wheel and a complicated pinpad.", "Nothing happens", 0);
     map[3]->items[1] = initializeItem("pinpad", "The pinpad consists of nine worn buttons and a faded day-glo screen.", "Nothing happens", 0);
+	map[3]->items[2] = initializeItem("whip", "A whip with 'Jim' written on the handle in Sharpie.", "Nothing happens", 0);
 
     // return array of rooms 
     return map;
