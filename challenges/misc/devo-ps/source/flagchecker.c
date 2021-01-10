@@ -4,7 +4,7 @@
 #include<openssl/md5.h>
 
 #ifndef FLAG_HASH
-	#define FLAG_HASH "flag"
+	#define FLAG_HASH "fake_flag"
 #endif
 
 void createHash(unsigned char *input, unsigned char *string_result) {
@@ -19,11 +19,6 @@ void createHash(unsigned char *input, unsigned char *string_result) {
 int main(){
 	char string_result[33];
 	char *flag = FLAG_HASH;
-
-	if (strncmp(FLAG_HASH, "flag", 5) == 0) {
-		printf("Flag value must be set by preprocessor. Quitting.\n");
-		exit(1);
-	}
 	
 	printf("Give me a flag and I'll tell you if it's real.\n");
 
