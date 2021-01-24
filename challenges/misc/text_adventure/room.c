@@ -51,6 +51,21 @@ struct room * initializeRoom(char *roomName, char *description) {
 // creates the rooms for the game map and links them together
 // returns a pointer to an array of room pointers
 struct room ** initializeMap() {
+    // ASCII art for stereo
+    char *music =   " ___|)_________________________________________________________||\n"
+                    "|   |                                                          ||\n"
+                    "|___/______________________________|___________________________||\n"
+                    "|   |                              |                           ||\n"
+                    "|__/|_________/|____/|_____/|______|___________________________||\n"
+                    "|   |        / |     |      |      |                           ||\n"
+                    "|_/(|,\____/___|___/_|____/_|______|___________________________||\n"
+                    "|   |     |    |  |  |   |  |      |                           ||\n"
+                    "|_\_|_/___|____|__|__|___|__|___|__|___________________________||\n"
+                    "|         |    |  |  |   |  |                                    \n"
+                    "|   |     |   ()  | ()   | ()                                    \n"
+                    "|         |       |      |                                       \n"
+                    "| (_|                                                            \n";
+
     // create all game rooms 
     struct room ** map = (struct room **) malloc(5 * sizeof(struct room *));
 
@@ -75,11 +90,11 @@ struct room ** initializeMap() {
     map[4]->westLink = map[1];
 
     // add items to rooms 
-	map[1]->items[0] = initializeItem("notice", "- Don't leave food on the counters. - Jim, stop playing your video game music so loud and stop leaving video game toys laying around! We get it, you like that game. - No pets allowed on premises.", "Nothing happens", 0);
+	map[1]->items[0] = initializeItem("notice", "- Remember to take all your food out of here before we leave for Christmas break!! \n- Jim, stop playing your video game music so loud and stop leaving video game toys laying around! We get it, you like that game. \n- No pets allowed on premises.", "Nothing happens", 0);
     map[2]->items[0] = initializeItem("terminal", "One computer in the back corner appears to still be functioning. It glows green and a single cursor blinks.", "./terminal-login", 1);
     map[2]->items[1] = initializeItem("junk", "Heaped around the room are piles of broken circuitry and smashed hardware. None of it seems useable.", "Nothing happens", 0);
 	map[2]->items[2] = initializeItem("drawer", "A slightly open drawer with a broken NES inside.", "Nothing happens", 0);
-	map[2]->items[3] = initializeItem("stereo", "A stereo with a tape inside labelled 'EPIC BOSS FITE MUSIC'. Probably illegally recorded but no judgement from me.", "Nothing happens", 0);
+	map[2]->items[3] = initializeItem("stereo", "A stereo with a tape inside labelled 'EPIC BATTLE MUSIC'. Probably illegally recorded but no judgement from me.", music, 0);
 
     map[3]->items[0] = initializeItem("safe", "The grey metal safe takes up the whole wall. On the front is a large black wheel and a complicated pinpad.", "Nothing happens", 0);
     map[3]->items[1] = initializeItem("pinpad", "The pinpad consists of nine worn buttons and a faded day-glo screen.", "Nothing happens", 0);
