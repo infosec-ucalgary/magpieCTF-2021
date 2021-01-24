@@ -52,28 +52,17 @@ struct room * initializeRoom(char *roomName, char *description) {
 // returns a pointer to an array of room pointers
 struct room ** initializeMap() {
     // ASCII art for stereo
-    char *music =   " ___|)_________________________________________________________||\n"
-                    "|   |                                                          ||\n"
-                    "|___/______________________________|___________________________||\n"
-                    "|   |                              |                           ||\n"
-                    "|__/|_________/|____/|_____/|______|___________________________||\n"
-                    "|   |        / |     |      |      |                           ||\n"
-                    "|_/(|,\____/___|___/_|____/_|______|___________________________||\n"
-                    "|   |     |    |  |  |   |  |      |                           ||\n"
-                    "|_\_|_/___|____|__|__|___|__|___|__|___________________________||\n"
-                    "|         |    |  |  |   |  |                                    \n"
-                    "|   |     |   ()  | ()   | ()                                    \n"
-                    "|         |       |      |                                       \n"
-                    "| (_|                                                            \n";
+    char *music ="asdfasd";
 
     // create all game rooms 
     struct room ** map = (struct room **) malloc(5 * sizeof(struct room *));
 
-    map[0] = initializeRoom("entrance", "You're in a room, but you don't know how you got here. To the north is a heavy metal door.");
+    map[0] = initializeRoom("starter", "You're in a room, but you don't know how you got here. To the north is a heavy metal door.");
     map[1] = initializeRoom("main", "You are in a large space with metal doors to the North, South, and West. On the wall across from you, there is a notice.");
     map[2] = initializeRoom("lab", "To the east is a heavy metal door. There is an slightly open drawer nearby and on top of it is a stereo. Broken computer equipment is everywhere, but one terminal continues to blink...");
-    map[3] = initializeRoom("locked", "A locked safe sits on the north side of the room. On the wall is a whip on a plaque. To the south is a heavy metal door.");
-    map[4] = initializeRoom("secret", "You're not sure you're supposed to be here...");
+    map[3] = initializeRoom("office", "A large desk sits in the middle of the room. A small brass nameplate says 'Jim Smith.' On the wall is a whip on a plaque. To the south is a heavy metal door.");
+    map[4] = initializeRoom("lobby", "You're in the lobby of a dingy office building. All the lights are off. To the west is a surprisingly hefty door for an office. To the east is the entrance door");
+    map[5] = initializeRoom("secret", "Wait, this is part of the 2022 CTF... How did you get here?? Go back to the challenges.");
 
     // create links between rooms
     map[0]->northLink = map[1];
@@ -88,18 +77,24 @@ struct room ** initializeMap() {
     map[3]->southLink = map[1];
 
     map[4]->westLink = map[1];
+    map[4]->eastLink = map[5];
+
+    map[5]->westLink = map[4];
 
     // add items to rooms 
-	map[1]->items[0] = initializeItem("notice", "- Remember to take all your food out of here before we leave for Christmas break!! \n- Jim, stop playing your video game music so loud and stop leaving video game toys laying around! We get it, you like that game. \n- No pets allowed on premises.", "Nothing happens", 0);
+	map[1]->items[0] = initializeItem("notice", "- Remember to sign up for June's movie club! This month we'll be going to see Spaceballs \n- Jim, stop playing your video game music so loud and stop leaving video game toys laying around! It's only been out for a month, how are you this obsessed?? \n- No pets allowed on premises.", "Nothing happens", 0);
+    
     map[2]->items[0] = initializeItem("terminal", "One computer in the back corner appears to still be functioning. It glows green and a single cursor blinks.", "./terminal-login", 1);
-    map[2]->items[1] = initializeItem("junk", "Heaped around the room are piles of broken circuitry and smashed hardware. None of it seems useable.", "Nothing happens", 0);
-	map[2]->items[2] = initializeItem("drawer", "A slightly open drawer with a broken NES inside.", "Nothing happens", 0);
+    map[2]->items[1] = initializeItem("junk", "Heaped around the room are piles of broken circuitry and smashed hardware. None of it seems useable.", "None of this seems useful. It's all completely smashed up", 0);
+	map[2]->items[2] = initializeItem("drawer", "A slightly open drawer with a broken NES inside.", "The metal drawer is jammed in a half-open position. You can't open or close it.", 0);
 	map[2]->items[3] = initializeItem("stereo", "A stereo with a tape inside labelled 'EPIC BATTLE MUSIC'. Probably illegally recorded but no judgement from me.", music, 0);
+    map[2]->items[4] = initializeItem("NES", "An ancient gaming system, covered in a thick layer of dust. It's got a big crack down the middle of the faceplate.", "The NES is clearly broken. Besides, there's nowhere to plug it in", 0);
 
-    map[3]->items[0] = initializeItem("safe", "The grey metal safe takes up the whole wall. On the front is a large black wheel and a complicated pinpad.", "Nothing happens", 0);
-    map[3]->items[1] = initializeItem("pinpad", "The pinpad consists of nine worn buttons and a faded day-glo screen.", "Nothing happens", 0);
-	map[3]->items[2] = initializeItem("whip", "A whip with 'Jim' written on the handle in Sharpie.", "Nothing happens", 0);
+    map[3]->items[0] = initializeItem("desk", "The desk is large and boring. It is covered in yellowing computer punchcards that seem to be all out of order.", "Nothing happens", 0);
+    map[3]->items[1] = initializeItem("punchcards", "The punchcards are in some kind of data encoding that you've never seen before.", "Nothing happens", 0);
+	map[3]->items[2] = initializeItem("whip", "A whip with 'Jim' written on the handle in Sharpie.", "You swing the whip and it makes a loud 'CRACK.' You put it gingerly back on its plaque before you break something", 0);
 
+    map[4]->items[0] = initializeItem("lights", "There is a lightswitch on the wall.", "Nothing happens. The lights stay off", 0);
     // return array of rooms 
     return map;
 }
