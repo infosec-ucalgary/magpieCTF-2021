@@ -1,6 +1,6 @@
 # Movie Secrets
 ### Category: OSINT
-### Author: Ethan Sengsavang (e-seng)
+### Author: Ethan Sengsavang (Petiole)
 
 ## Description
 All the reviews from the film reviewer FibrousFilms was recently wiped.
