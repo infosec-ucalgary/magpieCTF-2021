@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Admin Login Page</title>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="styles.css" />
+        <script>
+            function loaded(){
+                let form = document.querySelector("form");
+                form.addEventListener("submit", function(event){
+                    event.preventDefault();
+                    let passwrd = form.pw.value;
+                    let newPath = "";
+
+                    for(chr in passwrd){
+                        newPath += passwrd.charCodeAt(chr).toString(16);
+                    }
+                    
+                    window.location.replace(`${newPath}.html`)
+                });
+            }
+
+            window.onload = () => loaded();
+        </script>
+    </head>
+    <body>
+        <div id="header">
+            <p><a href="index.html">Return</a></p>
+        </div>
+        <div id="main">
+            <form>
+                <label>
+                    <u>Username</u>
+                    <input type="text" value="admin" />
+                </label>
+                <label>
+                    <u>Password</u>
+                    <input name="pw" type="password" placeholder="password" />
+                </label>
+                <input type="submit" value="submit" />
+            <!-- Forgetting password? Password is in order as shown (and hidden) -->
+            </form>
+        </div>
+    </body>
+</html>
