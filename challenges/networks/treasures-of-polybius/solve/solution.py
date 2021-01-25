@@ -24,8 +24,6 @@ def main():
         dl_link = f"https://drive.google.com/u/0/uc?id={id_str}&export=download" 
         confirm_key = ""
 
-        print(dl_link)
-
         # Essential code is below
         session = requests.Session()
         resp = session.get(dl_link)
@@ -40,20 +38,23 @@ def main():
  
 
         prev_key = confirm_key
-        print(confirm_key)
         confirm_link = f"https://drive.google.com/u/0/uc?export=download&id={id_str}&confirm={confirm_key}"
 
         print(f"requesting {confirm_link}")
         resp = session.get(confirm_link)
-        print(f"downloading {confirm_link} to temp.bin")
-        with open("./temp.bin", "wb+") as dump: dump.write(resp.content)
         session.close()
+        if("magpie" not in str(resp.content)):
+            print("Flag not found, moving to next link")
+            continue
 
-        print(f"content from {confirm_link} has been written to temp")
-        grep = subp.Popen(f"strings temp.bin | grep magpie >> flag.txt", shell=True)
-        with open("./flag.txt", "r") as flag: flag.read()
+        print("Flag found! Writing to flag.bin")
+        with open("flag.bin", "wb+") as flag_file:
+            flag_file.write(resp.content)
 
-        print("")
+        print("File with flag written to flag.bin")
+        print("use `strings flag.bin | grep magpie` to retrieve the flag")
+
+        return
     return
 
 if __name__ == "__main__": main()
