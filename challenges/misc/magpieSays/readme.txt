@@ -1,6 +1,6 @@
 #MagpieSays
 ### Category: Misc
-### Author: Ejaaz Lakhani 
+### Author: Ejaaz Lakhani (EjaazLakhani1)
 
 ##Description
 1) standard game of Simon Says 
