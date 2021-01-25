@@ -1,6 +1,6 @@
 # Treasures of Polybius
 ### Category: Networking
-### Author: Ethan Sengsavang (e-seng)
+### Author: Ethan Sengsavang (Petiole)
 
 ## Description
 Rumours have been floating around that some data from the legendary Polybius
@@ -64,7 +64,7 @@ https://drive.google.com/file/d/1xvJurxc2nLfFp6TvgmZb1r525R-0TEkk/view?usp=shari
 https://drive.google.com/file/d/1jDvzBYkgK3WWlXbHEadmGW3yWn4AMRQw/view?usp=sharing
 ```
 ## Hints
-1. Which link leads you to the file itself?
+1. What is the format of the link to the file itself?
 2. How does Google know which file you're trying to download?
 3. Where does the confirmation key come from?
 
