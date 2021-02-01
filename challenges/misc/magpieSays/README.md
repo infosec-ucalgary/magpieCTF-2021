@@ -1,8 +1,8 @@
-#MagpieSays
+# MagpieSays
 ### Category: Misc
 ### Author: Ejaaz Lakhani 
 
-##Description
+## Description
 1) standard game of Simon Says 
 2) run java SimonTest on cmd line
 3) mimic the game output using keyboard
@@ -18,7 +18,7 @@
 	9 - magenta  
 
 
-##Solution
+## Solution
 1) The game works as a normal game of Simon Says where the CPU gives a string of arguments equal to the level then the user has to mimic those arguments to move on to the next level. 
 
 2) User can input the pattern using number keys from 0-9 going counter clockwise starting from green. 
