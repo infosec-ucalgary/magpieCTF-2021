@@ -4,7 +4,7 @@
 
 ## Description
 1) standard game of Simon Says 
-2) run java SimonTest on cmd line
+2) run the provided jar file 
 3) mimic the game output using keyboard
 	0 - green
 	1 - red
@@ -16,6 +16,8 @@
 	7 - gray
 	8 - orange
 	9 - magenta  
+
+4) magpieSays find the flag
 
 
 ## Solution
