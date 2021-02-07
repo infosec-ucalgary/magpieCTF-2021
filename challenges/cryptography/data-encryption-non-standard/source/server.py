@@ -3,35 +3,37 @@ import time
 
 
 def encrypt(message, key):
-	left = message[0:2]
-	right = message[2:4]
+	left = message.hex()[0:5]
+	right = message.hex()[5:10]
 
 	subkeys = gen_subkeys(key)
 
 	for i in range(32):
-		left, right = right, xor_bytes(f(right, subkeys[i]), left)
+		left, right = right, xor_hex_strings(f(right, subkeys[i]), left)
 	
-	return right + left
+	return bytes.fromhex(right + left)
 
 
 def decrypt(ciphertext, key):
-	left = ciphertext[0:2]
-	right = ciphertext[2:4]
+	left = ciphertext.hex()[0:5]
+	right = ciphertext.hex()[5:10]
 
 	subkeys = gen_subkeys(key)[::-1]
 
 	for i in range(32):
-		left, right = right, xor_bytes(f(right, subkeys[i]), left)
+		left, right = right, xor_hex_strings(f(right, subkeys[i]), left)
 	
-	return right + left
+	return bytes.fromhex(right + left)
 
 
 def f(r, key):
-	return bytes([(r[i] + key[i]) % 256 for i in range(2)])
+	sub = [hex( (int(r[i], 16) + int(key[i], 16)) % 16 )[2] for i in range(5)]
+
+	return ''.join(sub[1:5] + [sub[0]])
 
 
 def gen_subkeys(key):
-	subkeys = [key[0:2], key[2:4]]
+	subkeys = [key[0:5], key[5:10]]
 
 	for i in range(30):
 		subkeys.append(subkeys[i])
@@ -39,27 +41,24 @@ def gen_subkeys(key):
 	return subkeys
 
 
-def xor_bytes(a, b):
-	return bytes(a[i] ^ b[i] for i in range(len(a)))
+def xor_hex_strings(a, b):
+	return ''.join([hex( int(a[i], 16) ^ int(b[i], 16) )[2] for i in range(len(a))])
 
 
 def main():
 	FLAG = "magpie{T74t'5_a_F31StY_C19HeR}"
-	key = os.urandom(4)
+	key = os.urandom(5).hex()
 
-	for i in range(2**10):
+	start = time.time()
+	for i in range(2**12):
 		print("Choose an option: 1 to encrypt a message, 2 to decrypt, 3 to guess the key, or 4 to exit")
 		choice = int(input())
 
 		if choice == 1:
-			print("Enter your message in hex")
-
 			message = bytes.fromhex(input())
 			
 			print(encrypt(message, key).hex())
 		elif choice == 2:
-			print("Enter your ciphertext in hex")
-
 			message = bytes.fromhex(input())
 			
 			print(decrypt(message, key).hex())
@@ -70,7 +69,7 @@ def main():
 
 			time.sleep(5)
 
-			if(guess == key.hex()):
+			if(guess == key and time.time() - start <= 1800):
 				print("You figured it out... I guess I owe you a flag")
 				print(FLAG)
 				exit()
