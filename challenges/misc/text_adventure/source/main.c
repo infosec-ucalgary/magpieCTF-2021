@@ -12,6 +12,7 @@ static bool getInput(void) {
 }
 
 int main(){
+    setvbuf(stdout, NULL, _IONBF, 0);
     system("clear");
     printf("Welcome to Magpie Adventure. Type 'help' for a list of commands.\n");
     struct room **map = initializeMap();
