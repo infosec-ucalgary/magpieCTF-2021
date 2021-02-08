@@ -14,7 +14,7 @@ We're also given server\_no\_flag.py.
 2. Well, I guess I did borrow the structure from DES...
 
 ## Solution
-1. We start by looking at the block cipher in the program we're given. The key size is relatively small for a block cipher, but we're limited on time to brute force it. However, there are more weaknesses we can exploit much more efficiently.
+1. We start by looking at the block cipher in the program we're given. There are a lot of weaknesses in this cipher, such as a relatively small key size or weak keys (and likely a variety of other attacks). However, the following attack will be sure to run in the time we have during the CTF.
 
 2. The first thing to notice is that the round keys are just switched between the halves of the original key for the cipher. This means the cipher is essentially just an iteration of the same two rounds repeated several times. We also see that we can calculate the key quite easily from the input and output of these two rounds, so we can use a slide attack here.
 
