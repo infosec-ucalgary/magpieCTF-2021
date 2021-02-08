@@ -49,7 +49,9 @@ def main():
 	FLAG = "magpie{}"
 	key = os.urandom(5).hex()
 
+	time.sleep(5)
 	start = time.time()
+
 	for i in range(2**12):
 		print("Choose an option: 1 to encrypt a message, 2 to decrypt, 3 to guess the key, or 4 to exit")
 		choice = int(input())
@@ -66,8 +68,6 @@ def main():
 			print("Enter your guess in hex")
 
 			guess = input().lower()
-
-			time.sleep(5)
 
 			if(guess == key and time.time() - start <= 1800):
 				print("You figured it out... I guess I owe you a flag")
