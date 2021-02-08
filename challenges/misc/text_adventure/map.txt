@@ -1,9 +1,0 @@
-0 C 0
-L H X
-0 S 0
-
-S = start 
-H = hub 
-L = computer lab 
-C = crypto/safe room 
-X = secret tbd
