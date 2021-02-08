@@ -1,5 +1,3 @@
-:
-
 # WarGames
 ### Category: Forensics
 ### Author: Alexandra Tenney (alexxxii)
