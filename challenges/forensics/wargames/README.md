@@ -8,7 +8,7 @@
 Joshua doesn't only like playing games, he also likes messing with the windows registry. I heard he was messing around at Software\Magpie.
 
 ## Hints
-1. "Software\Magie" might be the key...
+1. "Software\Magpie" might be the key...
 
 ## Solution
 Volatlity is a great program to parse through volatile memory, like that found in a vmem file. An `apt install` isnt the best installation choice because it doesn't download the newest version, so directly cloning the github and running the program from there should be our course of action.
