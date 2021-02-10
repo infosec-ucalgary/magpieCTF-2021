@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+    <style>
+      h1 {font-family: 'VT323', monospace; font-size: 50px; text-decoration: underline;}
+      h2 {font-size: 18px;}
+      .footer{ position: fixed; text-align: center; bottom: 0px; width: 100%;}  
+    </style>
+  </head>      
+
+<body background="static/yellowbackground.png">
+
+    <div id="title" style="text-align:center">
+      <span style="text-align: center; vertical-align: middle;"><h1>Punch Cards</h1></span>
+    </div>
+
+    <h2 style="text-align: center;">The core of Magpie's business has always been the ability
+     to master not only the future, but the past as well.  Magpie was originally founded as a 
+    company specializing in hard copy, portable data storage.  The meant specializing in punch card
+    technology.  From those early days of punching chads out of paper, Magpie continues to innovate!
+    </h2>
+    
+    <br>
+    
+    <h2 style="text-align: center;">We're proud to demonstrate out newest innovation, <b> a program
+        to punch out digital versions of our cards!</b>  Not only can this program create a punch card
+        digitally, but it does it completely over the intenet!  Simply enter your desired line and
+        our online utility will give you back a digitally punched out card!  
+    </h2>
+
+    <br>
+
+    <div style="text-align: center;">
+      <form action="/punch" method="POST">
+        <input style="text-align: center;" type="text" id="textInput" value="Input text here..." size="50" name="textInput">
+        <br><br>
+        <button type="submit">Punch It!</button>
+      </form>
+    </div>
+    
+
+        <div class="footer">&#169 1963-1993 Magpie Electronic Machines Inc. All Rights Reserved
+        </div>
+
+<!-- <script>
+  function punchCard() {
+    var message = document.getElementById("textInput").value;
+    console.log(message);
+    $.ajax({
+      type: "POST",
+      url: "http://127.0.0.1:5000/punch",
+      data: {'string': message},
+      success: function(response) {
+        var filename = response;
+        var download_url = "./cards/" + filename;
+        var a = document.createElement("a");
+        a.href = download_url;
+        a.download = filename;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+      }
+    })
+
+  }
+</script> -->
+        
+
+</body>
+
+</html>

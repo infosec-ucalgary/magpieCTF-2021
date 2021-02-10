@@ -1,0 +1,3 @@
+filetype
+flask_cors
+Pillow

@@ -1,0 +1,10 @@
+<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+
+<frameset rows="150px,*">
+    <frame noresize src="banner.html" name="topframe">
+    <frameset cols="20%,*,20%">
+        <frame src="menu.html" name="leftframe">
+        <frame src="homepage.html" name="midframe">
+        <frame noresize src="sidebar.html" name="rightframe">
+    </frameset>
+</frameset>
