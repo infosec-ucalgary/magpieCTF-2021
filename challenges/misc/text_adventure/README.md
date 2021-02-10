@@ -6,7 +6,7 @@
 
 # OSINT
 ## Description
-In our text adventure, you find traces of a certain nerdy employee! It seems like he obsessed over a certain song. Look around and by the power of deduction (and your favourite search engine) figure out the name of that song!
+In our text adventure, you find traces of a certain nerdy employee! It seems like he obsessed over a certain song. Look around very carefully and using the power of deduction (and your favourite search engine) figure out the name of that song!
 
 ## Hints
 1. When submitting the flag, it should be all lowercase and separated by underscores: magpie{fake_answer_to_OSINT_here}
