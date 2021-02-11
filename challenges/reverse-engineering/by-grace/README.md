@@ -19,6 +19,7 @@ There are a few steps and things to solve to get this challengem but there are l
 3. You get a lot of odd code.  Notice that each line ends with a number.  This is marking which line of code it is in the program.  The lines are all jumbled.  Organize the program into it's proper configuration.
 
 4. What is this weird program?!  A few searches and you should figure out that this is COBOL.  There are a few lines that have <FIX ME> or <ANSWER> in them, but none of them are very specific to the program, and the compiler will likely give you hints about what it needs.  They're part of the lines that every COOBL program should have (except line 37).  You need to figure out what goes there:
+
         Line 1) `IDENTIFICATION DIVISION.` This is the standard opening line of any COBOL program.
 
         Line 27) `PROCEDURE DIVISION.` The line that identifies the code section of the program.
