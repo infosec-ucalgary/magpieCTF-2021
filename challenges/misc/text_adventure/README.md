@@ -40,7 +40,9 @@ magpie{nothing_to_lose}
 
 ---
 
-# Binary Room
+# Binary
+## Description
+Dracula left his terminal open. It's password protected but he's not very good at programming. He really should stick to evil magic...
 
 ## Hints
 No hints. Everything needed is given in print statements.
