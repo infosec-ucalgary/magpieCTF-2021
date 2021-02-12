@@ -1,4 +1,12 @@
-# Magpie2021 - Calvinball 
+# Calvinball
+### Category: Reverse Engineering
+### Author: Emily Baird (Analytical Engine)
+
+## Description
+"The only rule in Calvinball is that you can never play with the same rules twice. Speaking of rewriting the rules, I think there's something fishy going on with this program...
+
+## Hints
+Take a look at that syscall at the beginning of main.
 
 ## Solution:
 The challenge can be solved by tracing the execution of the assembly. 
