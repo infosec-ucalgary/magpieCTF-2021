@@ -80,6 +80,16 @@ p i{
 
 #main #about{
     margin: 0 3rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    background-image: url("./camera_display.png");
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: contain;
+    padding-right: 40vw;
 }
 
 #main p{
