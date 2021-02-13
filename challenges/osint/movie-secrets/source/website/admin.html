@@ -9,9 +9,12 @@
                 let form = document.querySelector("form");
                 form.addEventListener("submit", function(event){
                     event.preventDefault();
-                    let passwrd = form.pw.value;
+                    let favs = form.pet.value + form.movie.value + form.food.value;
+                    let passwrd = favs + form.key.value;
                     let newPath = "";
 
+                    // Character Leniency 
+                    passwrd = passwrd.toLowerCase();
                     for(chr in passwrd){
                         newPath += passwrd.charCodeAt(chr).toString(16);
                     }
@@ -34,12 +37,24 @@
                     <input type="text" value="admin" />
                 </label>
                 <label>
-                    <u>Password</u>
-                    <input name="pw" type="password" placeholder="password" />
+                    <u>Pet's Name</u>
+                    <input name="pet" type="password" placeholder="your pet" />
+                </label>
+                <label>
+                    <u>Favourite Movie</u>
+                    <input name="movie" type="password" placeholder="fav movie"/>
+                </label>
+                <label>
+                    <u>Favourite Food</u>
+                    <input name="food" type=password" placeholder="fav food" />
+                </label>
+                <label>
+                    <u>Hidden Key</u>
+                    <input name="key" type="password" placeholder="auth key" />
                 </label>
                 <input type="submit" value="submit" />
-            <!-- Forgetting password? Password is in order as shown (and hidden) -->
             </form>
+            <!-- Forgetting something? Remember: single word answers -->
         </div>
     </body>
 </html>
