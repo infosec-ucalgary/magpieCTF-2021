@@ -49,6 +49,7 @@ def main():
 	FLAG = "magpie{T74t'5_a_F31StY_C19HeR}"
 	key = os.urandom(5).hex()
 
+	print("Hello! The encryption service will start momentarily...")
 	time.sleep(5)
 	start = time.time()
 
