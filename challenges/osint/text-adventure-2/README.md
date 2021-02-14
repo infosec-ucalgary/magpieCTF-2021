@@ -1,10 +1,9 @@
-# Text-Adventure
-### Category: Misc
-### Author: Joshua Novak (rm -rf /0797), Emily Baird (Analytical Engine4954) and Brandon Arenas (Inga5508)
+# Text Adventure 2
+### Category: OSINT
+### Author: Joshua Novak (rm -rf /#0797), Emily Baird (Analytical Engine#4954) and Brandon Arenas (Inga#5508)
 
 ---
 
-# OSINT
 ## Description
 In our text adventure, you find traces of a certain nerdy employee! It seems like he obsessed over a certain song. Look around very carefully and using the power of deduction (and your favourite search engine) figure out the name of that song!
 
@@ -36,6 +35,7 @@ In our text adventure, you find traces of a certain nerdy employee! It seems lik
     - Once you know all of the above: the piece of music is "Nothing To Lose", the final boss themes in Castlevania.
 
 ## Flag
+<<<<<<< HEAD:challenges/misc/text_adventure/README.md
 magpie{nothing_to_lose}
 
 ---
@@ -54,3 +54,6 @@ For a detailed solution, see exploit.py in solve/
 
 ## Flag
 magpie{d()nt_p@n!k_pIz}
+=======
+magpie{nothing_to_lose}
+>>>>>>> master:challenges/osint/text-adventure-2/README.md

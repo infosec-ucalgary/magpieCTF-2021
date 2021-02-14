@@ -1,4 +1,4 @@
-# Smash
+# Spectral Crib Synth
 ### Category: Forensics
 ### Author: Brandon Arenas (Inga5508)
 

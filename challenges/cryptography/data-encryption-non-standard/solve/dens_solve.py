@@ -47,6 +47,8 @@ def solve():
 	conn = remote(HOST, PORT)
 	pairs = []
 
+	discard = conn.recvline()
+
 	for p in plaintexts:
 		discard = conn.recvline()
 		conn.send("1\n" + p + '\n')
