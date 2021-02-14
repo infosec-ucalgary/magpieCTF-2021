@@ -35,4 +35,25 @@ In our text adventure, you find traces of a certain nerdy employee! It seems lik
     - Once you know all of the above: the piece of music is "Nothing To Lose", the final boss themes in Castlevania.
 
 ## Flag
+<<<<<<< HEAD:challenges/misc/text_adventure/README.md
 magpie{nothing_to_lose}
+
+---
+
+# Binary
+## Description
+Dracula left his terminal open. It's password protected but he's not very good at programming. He really should stick to evil magic...
+
+## Hints
+No hints. Everything needed is given in print statements.
+
+## Solution
+Solution is to overwrite the 9 byte password. The real obstacle is giving gets a null byte right after the first password so that strcmp will not compare the entire 256 byte buffer. Instead, it will stop at the 10th byte, the null byte. 
+
+For a detailed solution, see exploit.py in solve/
+
+## Flag
+magpie{d()nt_p@n!k_pIz}
+=======
+magpie{nothing_to_lose}
+>>>>>>> master:challenges/osint/text-adventure-2/README.md

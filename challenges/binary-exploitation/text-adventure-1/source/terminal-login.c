@@ -42,4 +42,3 @@ int main() {
         else { printf("Wrong password\n"); }
         return 1;
 }
-

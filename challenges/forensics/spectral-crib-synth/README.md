@@ -11,9 +11,13 @@ So my friend borrowed two of my favourite songs and combined them together to ma
 
 ## Solution
 
-The wolf_raven mp3 file has part of the flag “magpie{5yn” at the 1 minute mark when viewing the audio as a spectrogram. The timecop_1983 file has the second part of the flag “tH_15_80’5k1n6}” at the 3 minute mark when viewing the audio as a spectrogram. The synth_mix file is a mix of both of these files where I purposely obfuscate the flag by moving the audio so that “magpie{5yn” aligns with the 3 minute mark which in turn aligns on top of the other part of the flag so that it looks like an illegible garble of letters. The challenge consists of reversing this process. 
+The wolf_raven mp3 file has part of the flag “magpie{5yn” at the 1 minute mark when viewing the audio as a spectrogram. The timecop_1983 file has the second part of the flag “tH_15_80’5k1n6}” at the 3 minute mark when viewing the audio as a spectrogram. The synth_mix file is a mix of both of these files where I purposely obfuscate the flag by moving the audio of wolf_raven which contains “magpie{5yn”, so that it aligns at the 3 minute mark with "tH_15_80'5k1n6}". This makes the flag look like an illegible garble of letters. The challenge consists of reversing this process. 
 
-First step is to view the audio files as spectrograms. Second step is to align the chunk of flag in raven_wolf to the 3 minute mark so that it in turn aligns with the garbled flag in synth_mix. After aligning them, raven_wolf needs to be inverted and finally a new mix needs to be created. This new mix will have raven_wolf subtracted from synth_mix which will ungarble the spectrogram, revealing the second part of the flag.
+1. View the audio files as spectrograms.
+2. Move the chunk of flag in raven_wolf to the 3 minute mark. Putting the wolf_raven flag to the 3 minute mark will align it with the garbled flag in synth_mix. 
+3. After aligning them, raven_wolf needs to be inverted.
+4. Finally, a new mix needs to be created by saving the mix as one audio file. 
+5. The new mix will have raven_wolf subtracted from synth_mix which will contain the ungarbled timecop_1983 file, revealing the second part of the flag.
 
 ## Flag
 magpie{5yntH_15_80’sk1n6}
