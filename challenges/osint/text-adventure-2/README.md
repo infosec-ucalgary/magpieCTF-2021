@@ -1,10 +1,9 @@
-# Text-Adventure
-### Category: Misc
+# Text Adventure 2
+### Category: OSINT
 ### Author: Joshua Novak (rm -rf /#0797), Emily Baird (Analytical Engine#4954) and Brandon Arenas (Inga#5508)
 
 ---
 
-# OSINT
 ## Description
 In our text adventure, you find traces of a certain nerdy employee! It seems like he obsessed over a certain song. Look around very carefully and using the power of deduction (and your favourite search engine) figure out the name of that song!
 
@@ -37,20 +36,3 @@ In our text adventure, you find traces of a certain nerdy employee! It seems lik
 
 ## Flag
 magpie{nothing_to_lose}
-
----
-
-# Binary Room
-## Description
-Dracula left his terminal open. It's password protected but he's not very good at programming. He really should stick to evil magic...
-
-## Hints
-No hints. Everything needed is given in print statements.
-
-## Solution
-Solution is to overwrite the 9 byte password. The real obstacle is giving gets a null byte right after the first password so that strcmp will not compare the entire 256 byte buffer. Instead, it will stop at the 10th byte, the null byte. 
-
-For a detailed solution, see exploit.py in solve/
-
-## Flag
-magpie{d()nt_p@n!k_pIz}
