@@ -1,6 +1,6 @@
 # Text-Adventure
 ### Category: Misc
-### Author: Joshua Novak (rm -rf /0797), Emily Baird (Analytical Engine4954) and Brandon Arenas (Inga5508)
+### Author: Joshua Novak (rm -rf /#0797), Emily Baird (Analytical Engine#4954) and Brandon Arenas (Inga#5508)
 
 ---
 
