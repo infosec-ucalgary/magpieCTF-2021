@@ -19,11 +19,7 @@ Twitter is mentioned on the website itself, where Reddit is mentioned on Twitter
 2. They then should notice the semi-hidden Admin Panel link on the footer
 of the page (or by going to admin.html themselves)
 3. Reading the html comment on `admin.html`, players should consider the
-ordered list on the homepage (`index.html`).
- * This shows that the password to the site is likely FibrousFilms' 
-pet name, followed by the name of their favourite movie, then their
-favourite food, and lastly the hidden string underneath that. This string
-is hidden with a paragraph set to 0 opacity.
+start to look for answers to security questions. 
 4. The pet's name can be determined:
  * From Reddit, fibrousfilms writes:
 
@@ -45,10 +41,12 @@ January 6th).
  * On Twitter, they state that they're making their favourite food "today"
 (Posted on January 7th)
  * Noticing that the two days line up, their favourite food can be determined.
-7. They mention that the sometimes connect words together `inthismanner` on
-their Reddit.
- * Thus, each peice can be connected in this way to form the password to 
-`admin.html`.
+7. The hidden key is just that, hidden.
+ * This should give a hint to point to the zero opacity string found on the
+index page of fibrousfilms' website.
+
+* NOTE: There is an intentional 404 page call if the players answer incorrectly,
+but players may use any casing to stay fairly lenient.
 
 # Flag
 magpie{j0urn3y\_t0\_743\_c3ntr3\_of\_743\_n3t}

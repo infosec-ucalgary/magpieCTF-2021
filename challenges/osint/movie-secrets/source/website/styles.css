@@ -67,6 +67,7 @@ body{
 #main h3{
     margin-top: 2rem;
     margin-bottom: 1rem;
+    text-align: center;
 }
 
 p a{
@@ -79,7 +80,17 @@ p i{
 }
 
 #main #about{
-    margin: 0 3rem;
+    margin: 0 10rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    background-image: url("./camera_display.png");
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: contain;
+    padding-right: 20vw;
 }
 
 #main p{
@@ -97,7 +108,7 @@ form{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 50vh;
+    height: 80vh;
 }
 
 label{
