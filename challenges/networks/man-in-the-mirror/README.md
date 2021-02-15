@@ -43,4 +43,4 @@ This challenge provides a website and a proxy. Going to the website without goin
 An example intercept proxy can be found at `solve/intercept-proxy.py`.
 
 ## Flag
-magpie{m4n_1n_th3_m1ddl3}
+magpie{1m_st4rt1ng_w1th_th3_m4n_1n_th3_m1ddl3}
