@@ -2,7 +2,7 @@ import requests, socket
 from multiprocessing.pool import ThreadPool
 
 def solve() -> bool:
-    flag = "magpie{m4n_1n_th3_m1ddl3}"
+    flag = "magpie{1m_st4rt1ng_w1th_th3_m4n_1n_th3_m1ddl3}"
 
     challenge_host = "net01.magpiectf.ca"
     challenge_port = 3665
