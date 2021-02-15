@@ -336,3 +336,12 @@ def punchcard():
 @app.route("/careers.html", methods=["GET"])
 def careers():
     return flask.render_template("careers.html")
+
+@app.route("/guestbook.html", methods=["GET"])
+def guestbook():
+    return flask.render_template("guestbook.html")
+
+@app.route("/robots.txt")
+@app.route("/humans.txt")
+def static_from_root():
+    return flask.send_from_directory("static/", flask.request.path[1:])
