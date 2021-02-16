@@ -21,8 +21,8 @@ THRESHOLD=240              # The value above which we detect a punch on the card
 
 UPLOAD_FOLDER = 'uploads/'
 ALLOWED_EXTENSIONS = {'png'} # file extensions they're allowed to download
-ANSWERS = ["NANOSECOND", "A NANOSECOND", "ONE NANOSECOND", "1 NANOSECOND", "ONE BILLIONTH OF A SECOND"
-            "A BILLIONETH OF A SECOND"]
+ANSWERS = ["NANOSECOND", "A NANOSECOND", "ONE NANOSECOND", "1 NANOSECOND", "ONE BILLIONTH OF A SECOND",
+            "A BILLIONTH OF A SECOND"]
 
 # labeling for the card.  the first two rows are usually labelled "R" and "X" or "12" and "11"
 # but the rows are relabled here to make it easier to program.
@@ -255,49 +255,52 @@ def punch():
 
 @app.route('/submit', methods = ['POST'])
 def upload_file():
-    f = flask.request.files['myfile']
-    filename = secure_filename(f.filename)
-    f.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-    kind = filetype.guess("uploads/" + filename)
-    print(kind)
-    if kind == None or kind.extension != "png":
-        deleteFile("uploads/" + filename)
-        return flask.send_from_directory('templates/', 'wrongExtension.html')
+    try:
+        f = flask.request.files['myfile']
+        filename = secure_filename(f.filename)
+        f.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+        kind = filetype.guess("uploads/" + filename)
+        if kind == None or kind.extension != "png":
+            deleteFile("uploads/" + filename)
+            return flask.send_from_directory('templates/', 'wrongExtension.html')
 
-    fileLocation = "uploads/" + filename
+        fileLocation = "uploads/" + filename
 
-    # text on the card, initialized to blank    
-    text = ''
-    # Our punched card
-    image = Image.open(fileLocation)
-    bitmap = image.load()
+        # text on the card, initialized to blank    
+        text = ''
+        # Our punched card
+        image = Image.open(fileLocation)
+        bitmap = image.load()
 
-    # There are eighty columns on the card.
-    for col in range(80):
+        # There are eighty columns on the card.
+        for col in range(80):
 
-        # Each time we find a hole, we accumulate its value here:
-        code = 0
+            # Each time we find a hole, we accumulate its value here:
+            code = 0
 
-        # If you divide the card into thirteen equally spaced rows, the
-        # holes occupy rows 1 to 13. Process each row in turn
-        for row in range(1,13):
+            # If you divide the card into thirteen equally spaced rows, the
+            # holes occupy rows 1 to 13. Process each row in turn
+            for row in range(1,13):
 
-          # The expected centre of this hole
-          x = FIRSTCOLUMN + col*COLSPACING
-          y = CARDHEIGHT*row / 13
+            # The expected centre of this hole
+                x = FIRSTCOLUMN + col*COLSPACING
+                y = CARDHEIGHT*row / 13
 
-          if pixel_is_bright(bitmap[x,y]):
-            bit_position = 12 - row
-            code |= (1 << bit_position)
+                if pixel_is_bright(bitmap[x,y]):
+                    bit_position = 12 - row
+                    code |= (1 << bit_position)
 
-        # Look the code up in our character map
-        text += punchCodes[code]
+                    # Look the code up in our character map
+            text += punchCodes[code]
 
-    text = text.rstrip()
-    if text in ANSWERS:
-        deleteFile(fileLocation)
-        return flask.send_from_directory('DaJackpot/', 'jh4tkdfg$@jb^&asd#$%ff.html')
-    else:
+        text = text.rstrip()
+        if text in ANSWERS:
+            deleteFile(fileLocation)
+            return flask.send_from_directory('DaJackpot/', 'jh4tkdfg$@jb^&asd#$%ff.html')
+        else:
+            deleteFile(fileLocation)
+            return flask.send_from_directory('templates/', 'sorry.html')
+    except:
         deleteFile(fileLocation)
         return flask.send_from_directory('templates/', 'sorry.html')
 

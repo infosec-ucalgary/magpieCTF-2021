@@ -35,7 +35,7 @@
 
     <div style="text-align: center;">
       <form action="/punch" method="POST">
-        <input style="text-align: center;" type="text" id="textInput" value="Input text here..." size="50" name="textInput">
+        <input style="text-align: center;" type="text" id="textInput" placeholder="Input text here..." size="50" name="textInput">
         <br><br>
         <button type="submit">Punch It!</button>
       </form>
@@ -45,29 +45,7 @@
         <div class="footer">&#169 1963-1993 Magpie Electronic Machines Inc. All Rights Reserved
         </div>
 
-<!-- <script>
-  function punchCard() {
-    var message = document.getElementById("textInput").value;
-    console.log(message);
-    $.ajax({
-      type: "POST",
-      url: "http://127.0.0.1:5000/punch",
-      data: {'string': message},
-      success: function(response) {
-        var filename = response;
-        var download_url = "./cards/" + filename;
-        var a = document.createElement("a");
-        a.href = download_url;
-        a.download = filename;
-        document.body.appendChild(a);
-        a.click();
-        document.body.removeChild(a);
-      }
-    })
-
-  }
-</script> -->
-        
+  
 
 </body>
 
