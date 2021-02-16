@@ -1,11 +1,11 @@
 # MagpieSays
 ### Category: Misc
-### Author: Ejaaz Lakhani 
+### Author: Ejaaz Lakhani dmsday#7306
 
 ## Description
-1) standard game of Simon Says 
-2) run the provided jar file 
-3) mimic the game output using keyboard
+Magpie is the oposite of a songbird, instead of Magpie mimicing your output, Magpie wants you to copy it. The more you do it, the happier Magpie becomes. If you make magpie happy enough, it might just tell you the flag.
+
+Mimic the game output using keyboard
 	0 - green
 	1 - red
 	2 - blue
@@ -17,7 +17,7 @@
 	8 - orange
 	9 - magenta  
 
-4) magpieSays find the flag
+MagpieSays find the flag
 
 
 ## Solution
@@ -28,7 +28,7 @@
 3) There are a total of 57 levels in the game. The final order of all buttons is 
 1,0,9,0,9,7,1,0,3,1,2,1,0,5,1,0,1,1,1,2,3,0,6,5,0,8,3,0,6,7,0,7,3,0,7,3,0,9,5,1,0,5,1,1,5,0,9,5,1,0,2,1,1,7,1,1,0,1,2,5
 
-4) One must think how can we represent data with a set of numbers. 
+4) Think how can we represent data with a set of numbers. 
 
 5) The solution here is ASCII where every 3 numbers correspond to an ASCII character 
 
