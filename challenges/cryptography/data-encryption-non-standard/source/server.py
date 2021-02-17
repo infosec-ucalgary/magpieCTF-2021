@@ -49,12 +49,12 @@ def main():
 	FLAG = "magpie{T74t'5_a_F31StY_C19HeR}"
 	key = os.urandom(5).hex()
 
-	print("Hello! The encryption service will start momentarily...")
+	print("Hello! The encryption service will start momentarily...", flush=True)
 	time.sleep(5)
 	start = time.time()
 
 	for i in range(2**12):
-		print("Choose an option: 1 to encrypt a message, 2 to decrypt, 3 to guess the key, or 4 to exit")
+		print("Choose an option: 1 to encrypt a message, 2 to decrypt, 3 to guess the key, or 4 to exit", flush=True)
 		choice = int(input())
 
 		if choice == 1:
@@ -71,16 +71,16 @@ def main():
 			guess = input().lower()
 
 			if(guess == key and time.time() - start <= 1800):
-				print("You figured it out... I guess I owe you a flag")
-				print(FLAG)
+				print("You figured it out... I guess I owe you a flag", flush=True)
+				print(FLAG, flush=True)
 				exit()
 			else:
-				print("Better luck next time")
+				print("Better luck next time", flush=True)
 				exit()
 		else:
 			exit()
 	
-	print("I think that's enough")
+	print("I think that's enough", flush=True)
 
 main()
 
