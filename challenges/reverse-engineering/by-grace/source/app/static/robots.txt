@@ -1,0 +1,4 @@
+User-agent:*
+Disallow:/humans.txt
+
+Attention Attention!  Greetings fellow human being.  There are no robots here.  Only genuine human beings.  Cease the search for robots.  There are only humans, not robots.

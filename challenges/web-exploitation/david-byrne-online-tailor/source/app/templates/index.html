@@ -1,0 +1,51 @@
+{% extends 'main-template.html' %}
+
+{% block head %}
+<title>Welcome to Byrne and Co. Tailors</title>
+{% endblock %}
+
+{% block body %}
+<div class="container">
+    <div class="container" align="center">
+        <h1><a href="/">David Byrne and co. Online Tailors</a></h1>
+        <img src="../static/big-suit.jpg" alt="perfect tailoring">
+        <p>Welcome to the David Byrne and co. Tailors. We are happy to present to you our new online service.<br>
+            Simply insert your measurements, and we will do the work of calculating your perfect jacket size.<br>
+            Just enter your shoulder measurement plus your height, and we will take care of the rest. In fact, <br>
+            you don't even need to do the math! Just input the equation, and let our high-tech Python code work its magic.
+        </p>
+    
+        <form action="/" method="POST">
+            <div class="form-group">
+                <input type="text" class="form-control" name="inputShoulder" placeholder="Enter your measurements">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+
+    <div style="min-height: 100px;"></div>
+
+    <div class="container">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Your Input:</th>
+                    <th scope="col">Your Perfect Jacket Size:</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        {{ size }}
+                    </td>
+                    <td>
+                        {{ jacket }}
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div style="min-height: 200px;"></div>
+</div>
+{% endblock %}

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+    <style>
+      h1 {font-family: 'VT323', monospace; font-size: 50px; text-decoration: underline;}
+      h2 {font-size: 18px;}
+      h3 {font-size: 14px;}
+      .footer{ position: fixed; text-align: center; bottom: 0px; width: 100%;}  
+    </style>
+  </head>      
+
+<body background="static/yellowbackground.png">
+     <div id="title" style="text-align:center">
+        <span style="text-align: center; vertical-align: middle;"><h1>Careers</h1></span>
+     </div>
+
+    <h2 style="text-align: center;">MEMI is always hiring!  If you'd like to be considered please
+        download the attached file and solve our puzzle.  Submit your answer further below and - 
+        if you're correct - you'll receive a flag to include with your application to show you've
+        passed our recruitment challenge.  Good luck!
+    </h2>
+    
+    <br><br><br>
+
+       <span style="text-align: center; vertical-align: middle;"><h1>Hiring Challenge</h1></span>
+
+
+    <h3 style="text-align: center;">Download the file below.  Figure out how to decode the data,
+        and get the program.  We have replaced a few lines with &lt;FIX ME&gt; where you will need
+        to figure out the missing line and one place with &lt;ANSWER&gt; where you will need to
+        figure out the right subroutine to run.  Once you have that, run the program and receive
+        the next clue.  Once you have solve the next clue, encode the answer on a punch card and
+        submit it further below.  <b>Remember</b>: the answer can only be submitted on a punch card!
+    </h3>
+    <br>
+    
+    <div style="text-align: center; font-size: 18px;" >
+        <a href="static/ByGrace.tar.gz" download="">Download Challenge</a>
+    </div>
+
+    <div id="title" style="text-align:center">
+      <span style="text-align: center; vertical-align: middle;"><h1>Submit Answer</h1></span>
+
+
+      <form action="/submit" method="POST" enctype="multipart/form-data">
+        <label for="myfile">Select a file:</label>
+        <input type="file" id="myfile" name="myfile"><br><br>
+        <input type="submit">
+        <!-- <button onclick="submitCard()">Submit Card</button> -->
+      </form>
+    </div>
+  
+    <br>
+
+        <div class="footer">&#169 1963-1993 Magpie Electronic Machines Inc. All Rights Reserved
+        </div>
+
+  <script>
+
+  </script>
+        
+</body>
+
+</html>

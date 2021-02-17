@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Admin Login Page</title>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="styles.css" />
+        <script>
+            function loaded(){
+                let form = document.querySelector("form");
+                form.addEventListener("submit", function(event){
+                    event.preventDefault();
+                    let favs = form.pet.value + form.movie.value + form.food.value;
+                    let passwrd = favs + form.key.value;
+                    let newPath = "";
+
+                    // Character Leniency 
+                    passwrd = passwrd.toLowerCase();
+                    for(chr in passwrd){
+                        newPath += passwrd.charCodeAt(chr).toString(16);
+                    }
+                    
+                    window.location.replace(`${newPath}.html`)
+                });
+            }
+
+            window.onload = () => loaded();
+        </script>
+    </head>
+    <body>
+        <div id="header">
+            <p><a href="index.html">Return</a></p>
+        </div>
+        <div id="main">
+            <form>
+                <label>
+                    <u>Username</u>
+                    <input type="text" value="admin" />
+                </label>
+                <label>
+                    <u>Pet's Name</u>
+                    <input name="pet" type="password" placeholder="your pet" />
+                </label>
+                <label>
+                    <u>Favourite Movie</u>
+                    <input name="movie" type="password" placeholder="fav movie"/>
+                </label>
+                <label>
+                    <u>Favourite Food</u>
+                    <input name="food" type="password" placeholder="fav food" />
+                </label>
+                <label>
+                    <u>Hidden Key</u>
+                    <input name="key" type="password" placeholder="auth key" />
+                </label>
+                <input type="submit" value="submit" />
+            </form>
+            <!-- Forgetting something? favourite items only use single words -->
+        </div>
+    </body>
+</html>

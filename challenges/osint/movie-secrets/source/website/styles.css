@@ -1,0 +1,132 @@
+:root{
+    font-size: 20px;
+    font-family: "Helvetica", sans-serif;
+    
+    --background: #222222;
+    --font-color: #f3f3f3;
+    --footer-background: #181818;
+    --hidden-link: #242424;
+}
+
+body *{
+    display: block;
+    padding: 0;
+    margin: 0;
+}
+
+p, h1, h2, h3, i, b, a, li, u{
+    color: var(--font-color);
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    background-color: var(--background);
+    margin: 0;
+}
+
+#header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+#main{
+    margin: 2rem 1rem;
+}
+
+#movie-list{
+    display: table;
+    width: 70vw;
+    margin: auto;
+}
+
+#movie-list tbody{
+    display: table-row-group;
+}
+
+#movie-list tr{
+    display: table-row;
+}
+
+#movie-list td, #movie-list th{
+    padding: 0.5rem;
+    text-align: left;
+    display: table-cell;
+    color: var(--font-color);
+    border: 1px solid var(--footer-background);
+}
+
+.movie-list b{
+    display: inline;
+}
+
+#main h3{
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+p a{
+    display: inline;
+    text-decoration: underline;
+}
+
+p i{
+    display: inline;
+}
+
+#main #about{
+    margin: 0 10rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    background-image: url("./camera_display.png");
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: contain;
+    padding-right: 20vw;
+}
+
+#main p{
+    line-height: 1.1rem;
+    margin-bottom: 1.2rem;
+}
+
+li{
+    display: list-item;
+    margin-left: 3rem;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
+}
+
+label{
+    margin-bottom: 2rem;
+}
+
+#footer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    width: 100vw;
+
+    background-color: var(--footer-background);
+}
+
+#footer a{
+    color: var(--hidden-link);
+}

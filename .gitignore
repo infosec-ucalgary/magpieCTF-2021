@@ -131,4 +131,6 @@ dmypy.json
 # Github workflow things
 challenges/misc/devo-ps/.github/workflows/*
 challenges/misc/devo-ps/act/*
-challenges/misc/devo-ps/flagchecker 
+challenges/misc/devo-ps/source/app/flagchecker 
+challenges/misc/text_adventure/terminal-login
+challenges/misc/text_adventure/textadventure
