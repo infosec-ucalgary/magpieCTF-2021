@@ -4,7 +4,11 @@
 
 # Description
 As a kid growing up in the 80’s, little Robby was so obsessed with the Rubik’s Cube that he got the nickname “Robby the Cuber”.
-To this day he still loves the puzzle and document tips and tricks for the Rubik’s Cube online. Can you find his secret blog of tips and tricks?
+To this day he still loves the puzzle and document tips and tricks for the Rubik’s Cube on his social media account and online. Can you find his secret blog of tips and tricks?
+
+# Hints
+1. Robby's favourite social media site has 353 million users as of 2020. 
+2. I heard someone tell me once that Robby has a strange affinity for RGB codes. 
 
 # Solution
 1. Go to https://twitter.com/RobbyTheCuber.
