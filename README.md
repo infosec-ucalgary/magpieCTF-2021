@@ -1,5 +1,7 @@
 # magpieCTF 2021
 
+![magpieCTF Logo](ctf-logo.png)
+
 ## Overview
 This repository contains challenges and other resources for magpieCTF 2021.
 
