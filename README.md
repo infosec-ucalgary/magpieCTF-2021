@@ -3,7 +3,7 @@
 ![magpieCTF Logo](ctf-logo.png)
 
 ## Overview
-This repository contains challenges and other resources for magpieCTF 2021 ([magpiectf.ca](https://magpiectf.ca/)).
+This repository contains challenges, writeups, and other resources for magpieCTF 2021 ([magpiectf.ca](https://magpiectf.ca/)).
 
 Courtesy of the University of Calgary Information Security Club ([infosecucalgary.ca](https://infosecucalgary.ca/)).
 
