@@ -16,7 +16,8 @@ The website appears to be a renderer for LaTeX code. Writing LaTex and clicking 
 2. Trace all of these moves.
 3. Run the following decryption scrypt to change the sequence of her moves into quaternary, decimal, then ascii. 
 ```python
-from itertools import permutations  
+from itertools import permutations
+import time
 
 def qua_to_decimal(q):
     total = 0
@@ -35,40 +36,47 @@ def parse_flag(decimal):
     temp = ""
     for x in str(decimal):
         temp += x
-        if lower_bound <= int(temp) <= upper_bound:
-            flag += chr(int(temp))
-            temp = ""
+        flag += chr(int(temp))
 
     return flag
 
-moves = [
-    ...
-]
+# turn_left => l
+# pick_beeper => p
+# put_beeper => b
+# move => m
+
+moves = [ "lpbl", "lpml", "lplb", "lbmm", "lppl", "lpll", "lbpp", "lmpb", "mblm", "lbmp", "mbmb", "mbml", "llbb", "mbml", "mbll", "llbb", "mblm", "llbb", "mblp", "lbmp", "mbmb", "mblm", "mblb", "llbb", "mblb", "mbmb", "mblm", "lmmb", "lmpm", "mbmb", "lbmp"]
 
 perm = permutations([0, 1, 2, 3])  
-  
-# Print the obtained permutations  
-for i in list(perm):  
+
+for i in list(perm):
     string1 = ""
+    flag = ""
     for move in moves:
-        if move == "move()":
-            string1 += str(i[0])
-        elif move == "turn_left()":
-            string1 += str(i[1])
-        elif move == "put_beeper()":
-            string1 += str(i[2])
-        elif move == "pick_beeper()":
-            string1 += str(i[3])
-            
-
-    decodedString = parse_flag(qua_to_decimal(string1))
-    if "magpie" in decodedString:
-        print(decodedString)
-   
-
+        print(move)
+        for bit in move:
+            print(bit)
+            if bit == "m":
+                string1 += str(i[0])
+            elif bit == "l":
+                string1 += str(i[1])
+            elif bit == "b":
+                string1 += str(i[2])
+            elif bit == "p":
+                string1 += str(i[3])
+        print(string1)
+        new_string = str(qua_to_decimal(string1))
+        flag += chr(int(new_string))
+        print(flag)
+        string1 = ""
+    if "magpie" in flag:
+        print(flag)
+        break
 ```
 
 The complete moves list can be found in the script_solution.py file
 
 ## Flag
+magpiezK4r31_15_4_6r347_734CH3r
 magpie{K4r31_15_4_6r347_734CH3r}
+
