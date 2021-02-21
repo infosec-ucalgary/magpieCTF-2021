@@ -45,7 +45,7 @@ def parse_flag(decimal):
 # put_beeper => b
 # move => m
 
-moves = [ "lpbl", "lpml", "lplb", "lbmm", "lppl", "lpll", "lbpp", "lmpb", "mblm", "lbmp", "mbmb", "mbml", "llbb", "mbml", "mbll", "llbb", "mblm", "llbb", "mblp", "lbmp", "mbmb", "mblm", "mblb", "llbb", "mblb", "mbmb", "mblm", "lmmb", "lmpm", "mbmb", "lbmp"]
+moves = [ ... ]
 
 perm = permutations([0, 1, 2, 3])  
 
