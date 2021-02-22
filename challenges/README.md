@@ -19,8 +19,8 @@ This will be a bare-bones guide on how to run one of our docker challenges local
 5. To start the docker container, run `docker run -p <external port>:<internal port> <tag>`.
     * `<external port>` is the external port you will bind to a port on your computer. It can be almost anything.
     * `<internal port>` is the internal port that will be mapped to the container.
-        * The internal port differs for each challenge.
-    * `<tag>` is the same tag that you used before.
+        * The internal port differs for each challenge. See `Internal Ports` below. 
+    * `<tag>` is the same tag that you used to build the challenge before.
     * You can use the `-p` flag multiple times to forward multiple ports to the container.
 
 For example, to start Sweatin' in LaTeX
@@ -31,11 +31,10 @@ For example, to start Sweatin' in LaTeX
 5. Go to `http://localhost:8080` in a web browser to connect!
 
 Note: All dynamic challenges in the binary exploitation category need to be run with the `--priviledged` flag.
-* `docker run --priviledged -p 31337:31337 flush`
+* `docker run --priviledged -p 31337:31337 foobar`
 
 ### Internal Ports
 
-#### Binary Exploitation
 
 **Chain-my-song**
 * `1982`
@@ -61,23 +60,15 @@ Note: All dynamic challenges in the binary exploitation category need to be run 
 **Text Adventure 1**
 * `1976`
 
-#### Cryptography
-
 **Data Encryption (non)Standard**
 * `20000`
-
-#### Networks
 
 **Man-in-the-Mirror**
 * `8080` 
 * `1337`
 
-#### Reverse Engineer
-
 **By Grace** 
 * `80`
-
-#### Web Exploitation
 
 **Birdbuster Video** 
 * `80`
