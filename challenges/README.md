@@ -37,45 +37,62 @@ Note: All dynamic challenges in the binary exploitation category need to be run 
 
 #### Binary Exploitation
 
-**Chain-my-song** `1982`
+**Chain-my-song**
+* `1982`
 
-**Finger-in-the-shell** `6000`
+**Finger-in-the-shell**
+* `6000`
 
-**Flush** `31337`
+**Flush**
+* `31337`
 
-**numwrite** `8754`
+**numwrite**
+* `8754`
 
-**Poly** `31337`
+**Poly**
+* `31337`
 
-**Ret2jedi** `6600`
+**Ret2jedi**
+* `6600`
 
-**Smash** `1996`
+**Smash**
+* `1996`
 
-**Text Adventure 1** `1976`
+**Text Adventure 1**
+* `1976`
 
 #### Cryptography
 
-**Data Encryption (non)Standard** `20000`
+**Data Encryption (non)Standard**
+* `20000`
 
 #### Networks
 
-**Man-in-the-Mirror** `8080` and `1337`
+**Man-in-the-Mirror**
+* `8080` 
+* `1337`
 
 #### Reverse Engineer
 
-**By Grace** `80`
+**By Grace** 
+* `80`
 
 #### Web Exploitation
 
-**Birdbuster Video** `80`
+**Birdbuster Video** 
+* `80`
 
-**David Byrne Online Tailor** `80`
+**David Byrne Online Tailor**
+* `80`
 
-**Devo(ps)** `80`
+**Devo(ps)**
+* `80`
 
-**The Smurfs Cipher** `80`
+**The Smurfs Cipher**
+* `80`
 
-**Sweatin' in LaTeX** `80`
+**Sweatin' in LaTeX**
+* `80`
 
 ***
 ### Folder Organization
