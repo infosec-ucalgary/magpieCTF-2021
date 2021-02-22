@@ -23,7 +23,7 @@ This will be a bare-bones guide on how to run one of our docker challenges local
     * `<tag>` is the same tag that you used to build the challenge before.
     * You can use the `-p` flag multiple times to forward multiple ports to the container.
 
-For example, to start Sweatin' in LaTeX
+For example, to start Sweatin' in LaTeX:
 1. `git clone https://github.com/infosec-ucalgary/magpieCTF-2021.git`
 2. `cd magpieCTF-2021/challenges/web-exploitation/sweatin-in-latex/source`
 3. `docker build -t latex .`
