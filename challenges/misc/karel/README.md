@@ -10,8 +10,6 @@ Karel is a robot made by Richard E. Pattis used to teach programming and the log
 1. Karel only has four states...
 
 ## Solution
-The website appears to be a renderer for LaTeX code. Writing LaTex and clicking "Generate PDF" gives a link to a rendered PDf. The output LOG of the LaTeX renderer will also be displayed. 
-
 1. Download and slow down the video or take screenshots at every frame in order to see Karels movements. You should notice she has 4: move, turn left, pick up beeper, put down beeper (this also can be found online with descriptions about Karel).
 2. Trace all of these moves.
 3. Run the following decryption scrypt to change the sequence of her moves into quaternary, decimal, then ascii. 
