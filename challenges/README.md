@@ -30,8 +30,8 @@ For example, to start Sweatin' in LaTeX:
 4. `docker run -p 8080:80 latex`
 5. Go to `http://localhost:8080` in a web browser to connect!
 
-Note: All dynamic challenges in the binary exploitation category need to be run with the `--priviledged` flag.
-* `docker run --priviledged -p 31337:31337 foobar`
+Note: All dynamic challenges in the binary exploitation category need to be run with the `--privileged` flag.
+* `docker run --privileged -p 31337:31337 foobar`
 
 ### Internal Ports
 
