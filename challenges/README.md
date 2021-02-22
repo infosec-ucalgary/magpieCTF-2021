@@ -19,7 +19,7 @@ This will be a bare-bones guide on how to run one of our docker challenges local
 5. To start the docker container, run `docker run -p <external port>:<internal port> <tag>`.
     * `<external port>` is the external port you will bind to a port on your computer. It can be almost anything.
     * `<internal port>` is the internal port that will be mapped to the container.
-        * The internal port differs for each challenge. See `Internal Ports` below. 
+        * The internal port(s) differs for each challenge. See `Internal Ports` below. 
     * `<tag>` is the same tag that you used to build the challenge before.
     * You can use the `-p` flag multiple times to forward multiple ports to the container.
 
