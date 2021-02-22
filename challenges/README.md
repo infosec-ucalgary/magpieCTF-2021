@@ -6,6 +6,78 @@ Contains source code and solutions for dynamic and static challenges for magpieC
 Challenges are organized into folders based on challenge type.
 
 ***
+### Starting a Docker Container
+
+This will be a bare-bones guide on how to run one of our docker challenges locally. Go to [https://docs.docker.com/get-started/](https://docs.docker.com/get-started/) for more information.
+
+1. Install docker on your computer.
+    * If you're running Windows, I recommend looking into installing Docker using WSL2.
+2. Clone this repo to your local machine.
+3. Change your directory to the `source/` folder for the challenge you want to run in a terminal.
+4. Run `docker build -t <tag> .`
+    * `<tag>` is a name of your choice (for example, `foobar`).
+5. To start the docker container, run `docker run -p <external port>:<internal port> <tag>`.
+    * `<external port>` is the external port you will bind to a port on your computer. It can be almost anything.
+    * `<internal port>` is the internal port that will be mapped to the container.
+        * The internal port differs for each challenge.
+    * `<tag>` is the same tag that you used before.
+    * You can use the `-p` flag multiple times to forward multiple ports to the container.
+
+For example, to start Sweatin' in LaTeX
+1. `git clone https://github.com/infosec-ucalgary/magpieCTF-2021.git`
+2. `cd magpieCTF-2021/challenges/web-exploitation/sweatin-in-latex/source`
+3. `docker build -t latex .`
+4. `docker run -p 8080:80 latex`
+5. Go to `http://localhost:8080` in a web browser to connect!
+
+Note: All dynamic challenges in the binary exploitation category need to be run with the `--priviledged` flag.
+* `docker run --priviledged -p 31337:31337 flush`
+
+### Internal Ports
+
+#### Binary Exploitation
+
+**Chain-my-song** `1982`
+
+**Finger-in-the-shell** `6000`
+
+**Flush** `31337`
+
+**numwrite** `8754`
+
+**Poly** `31337`
+
+**Ret2jedi** `6600`
+
+**Smash** `1996`
+
+**Text Adventure 1** `1976`
+
+#### Cryptography
+
+**Data Encryption (non)Standard** `20000`
+
+#### Networks
+
+**Man-in-the-Mirror** `8080` and `1337`
+
+#### Reverse Engineer
+
+**By Grace** `80`
+
+#### Web Exploitation
+
+**Birdbuster Video** `80`
+
+**David Byrne Online Tailor** `80`
+
+**Devo(ps)** `80`
+
+**The Smurfs Cipher** `80`
+
+**Sweatin' in LaTeX** `80`
+
+***
 ### Folder Organization
 Each challenge folder should contain a `README.md` file that has the challenge description (as to be shown on CTFd), challenge solution, and flag.
 
